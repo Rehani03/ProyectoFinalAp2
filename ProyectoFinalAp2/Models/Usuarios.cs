@@ -13,19 +13,19 @@ namespace ProyectoFinalAp2.Models
         [Range(0, 1000000, ErrorMessage = "El campo Id no puede ser menor que cero ni mayor a 1000000.")]
         public int UsuarioId { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre no puede estar vacío.")]
-        [MinLength(3, ErrorMessage = "El Nombre es muy corto.")]
-        [MaxLength(30, ErrorMessage = "Nombre Nombre muy largo.")]
+        [Required(ErrorMessage = "El campo nombre no puede estar vacío.")]
+        [MinLength(3, ErrorMessage = "El nombre es muy corto.")]
+        [MaxLength(30, ErrorMessage = "El nombre es muy largo.")]
         public string Nombres { get; set; }
 
         [Required(ErrorMessage = "El nombre de usuario no puede estar vacío.")]
-        [MinLength(3, ErrorMessage = "El Nombre de usuario es muy corto.")]
-        [MaxLength(30, ErrorMessage = "El Nombre de usuario es muy largo.")]
+        [MinLength(3, ErrorMessage = "El nombre de Usuario es muy corto.")]
+        [MaxLength(30, ErrorMessage = "El nombre de usuario es muy largo.")]
         public string NombreUsuario { get; set; }
 
-        [Required(ErrorMessage = "El campo Clave no puede estar vacío")]
-        [MinLength(4, ErrorMessage = "La Clave es muy corta.")]
-        [MaxLength(60, ErrorMessage = "La Clave es muy larga.")]
+        [Required(ErrorMessage = "El campo clave no puede estar vacío")]
+        [MinLength(4, ErrorMessage = "La clave es muy corta.")]
+        [MaxLength(60, ErrorMessage = "La clave es muy larga.")]
         public string PassWord { get; set; }
 
         [DataType(DataType.DateTime)]
@@ -33,8 +33,8 @@ namespace ProyectoFinalAp2.Models
         [DisplayFormat(DataFormatString = "{0:dd,mm, yyyy}")]
         public DateTime FechaIngreso { get; set; }
 
-        [Required(ErrorMessage = "El Nivel Usuario no puede estar vacío.")]
-        public int Nivel { get; set; }
+        [Required(ErrorMessage = "El nivel de usuario no puede estar vacío.")]
+        public string Nivel { get; set; }
 
         public Usuarios()
         {
@@ -43,7 +43,7 @@ namespace ProyectoFinalAp2.Models
             NombreUsuario = string.Empty;
             PassWord = string.Empty;
             FechaIngreso = DateTime.Now;
-            Nivel = 0;
+            Nivel = string.Empty;
         }
     }
 }

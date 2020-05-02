@@ -13,26 +13,26 @@ namespace ProyectoFinalAp2.Models
         [Range(0, 1000000, ErrorMessage = "El campo Id no puede ser menor que cero o mayor a 1000000.")]
         public int ClienteId { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombres no puede estar vacío.")]
+        [Required(ErrorMessage = "El campo nombre no puede estar vacío.")]
         [MinLength(3, ErrorMessage = "El nombre debe tener por lo menos 3 caracteres.")]
         [MaxLength(50, ErrorMessage = "El nombre es muy largo.")]
-        public string Nombres { get; set; }
+        public string Nombre { get; set; }
 
         [Required(ErrorMessage ="El campo RNC no puede estar vacío.")]
         [MinLength(9, ErrorMessage = "El campo RNC debe contener 9 caracteres.")]
         public string RNC { get; set; }
 
-        [Required(ErrorMessage = "El campo Dirección no puede estar vacía.")]
-        [MinLength(10, ErrorMessage = "La Dirección es muy corta.")]
-        [MaxLength(40, ErrorMessage = "La Dirección debe contener menos de 40 caracteres.")]
+        [Required(ErrorMessage = "El campo dirección no puede estar vacía.")]
+        [MinLength(10, ErrorMessage = "La dirección es muy corta.")]
+        [MaxLength(40, ErrorMessage = "La dirección debe contener menos de 40 caracteres.")]
         public string Direccion { get; set; }
 
-        [Required(ErrorMessage = "El campo Número no puede estar vacío.")]
+        [Required(ErrorMessage = "El campo telefono no puede estar vacío.")]
         [RegularExpression("^(?!0+$)(\\+\\d{1,3}[- ]?)?(?!0+$)\\d{10,15}$", ErrorMessage = "Por favor ingrese un No. de teléfono válido.")]
-        [MaxLength(10, ErrorMessage = "El campo Numero no tiene más de diez dígitos.")]
+        [MaxLength(10, ErrorMessage = "El campo telefono no tiene más de diez dígitos.")]
         public string Telefono { get; set; }
 
-        [Required(ErrorMessage = "El campo Email no puede estar vacío.")]
+        [Required(ErrorMessage = "El campo email no puede estar vacío.")]
         public string Email { get; set; }
 
         [DataType(DataType.DateTime)]
@@ -43,7 +43,7 @@ namespace ProyectoFinalAp2.Models
         public Clientes()
         {
             ClienteId = 0;
-            Nombres = string.Empty;
+            Nombre = string.Empty;
             RNC = string.Empty;
             Direccion = string.Empty;
             Telefono = string.Empty;

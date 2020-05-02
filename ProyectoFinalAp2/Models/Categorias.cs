@@ -13,9 +13,9 @@ namespace ProyectoFinalAp2.Models
         [Required(ErrorMessage = "El campo Id debe ser numerico.")]
         public int CategoriaId { get; set; }
 
-        [Required(ErrorMessage ="El campo Descripcón no puede estar vacio.")]
-        [MinLength(2, ErrorMessage ="La Descripción es muy corta.")]
-        [MaxLength(30, ErrorMessage = "La Descripción es muy larga.")]
+        [Required(ErrorMessage ="El campo descripción no puede estar vacio.")]
+        [MinLength(2, ErrorMessage ="La descripción es muy corta.")]
+        [MaxLength(30, ErrorMessage = "La descripción es muy larga.")]
         public string Descripcion { get; set; }
         
 
