@@ -1,0 +1,73 @@
+﻿@page "/Categorias"
+@using ProyectoFinalAp2.Models
+
+<h3>Registo de Categorias</h3>
+
+<style> 
+    .form-group{
+        color: cadetblue;
+    }
+</style>
+
+
+<EditForm Model="categorias" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <p class="CategoriaId">
+        ID: <InputNumber @bind-Value="categorias.CategoriaId" />
+        <button type="button" class="btn btn-primary" @onclick="Buscar">    
+            Buscar
+        </button>
+    </p>
+
+    <p class="Descripcion">
+        Descripción: <InputText @bind-Value="categorias.Descripcion" />
+    </p>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-secondary" @onclick="Nuevo">
+            Nuevo
+        </button>
+        <button type="submit" class="btn btn-success" @onclick="Guardar">
+            Guardar
+        </button>
+        <button type="button" class="btn btn-danger" @onclick="Eliminar">
+            Eliminar
+        </button>
+
+    </div>
+
+</EditForm>
+
+
+@code {
+
+    Categorias categorias = new Categorias();
+
+    void HandleSubmit()
+    {
+        Console.WriteLine("Categorias...");
+    }
+
+    void Nuevo()
+    {
+        this.categorias = new Categorias();
+    }
+
+    void Guardar()
+    {
+
+    }
+
+    void Eliminar()
+    {
+
+    }
+
+    void Buscar()
+    {
+        Console.WriteLine("Click a buscar");
+    }
+
+}
