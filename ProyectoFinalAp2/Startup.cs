@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProyectoFinalAp2.Controllers;
 using ProyectoFinalAp2.Data;
+using ProyectoFinalAp2.Models;
 
 namespace ProyectoFinalAp2
 {
@@ -29,6 +32,9 @@ namespace ProyectoFinalAp2
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<Categorias>();
+            services.AddScoped<Clientes>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
