@@ -13,7 +13,6 @@ namespace ProyectoFinalAp2.Data
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"Server = .\SqlExpress; Database = ButterSoftDb2; Trusted_Connection = True; ");
-            //optionsBuilder.UseSqlServer(@"Server=tcp:cooasar-projectdbserver.database.windows.net,1433;Initial Catalog=COOASAR-PROJECT_db;Persist Security Info=False;User ID=Administrador-Rico;Password=Asdfghjkl05;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
 
