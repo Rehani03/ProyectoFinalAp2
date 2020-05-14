@@ -70,6 +70,14 @@
         return paso;
     }
 
+    public bool ExisteEnLaBaseDeDatos()
+    {
+        CategoriaControllers control = new CategoriaControllers();
+        Categorias encontrado = control.Buscar(categorias.CategoriaId);
+
+        return (encontrado != null);
+    }
+
     void Nuevo()
     {
         this.categorias = new Categorias();
@@ -87,7 +95,7 @@
         }
         else
         {
-            if(categorias.CategoriaId> 0)
+            if(ExisteEnLaBaseDeDatos())
             {
                 paso = control.Modificar(categorias);
             }
@@ -105,11 +113,10 @@
         bool paso= true;
         CategoriaControllers control = new CategoriaControllers();
 
-        if (ExisteEnLaBaseDeDatos(categorias.CategoriaId)!=false)
-        {
-            paso = control.Eliminar(categorias.CategoriaId);
+        
+        paso = control.Eliminar(categorias.CategoriaId);
 
-        }
+        
 
         if (paso)
         {
